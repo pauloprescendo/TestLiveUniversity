@@ -78,18 +78,18 @@ article {
   flex-direction: column;
   justify-content: space-between;
   padding: 35px 25px 60px 25px;
-  width: 82%;
+  width: 100%;
   background-color: #1a8d0a;
   min-height: 100%;
   transition: margin-left .5s;
 }
 
 article ul {
+  display: flex;
   list-style: none;
   margin: 0 auto;
   width: 100%;
   min-height: 100%;
-  display: flex;
   flex-direction: column;
   background-color: tomato;
 }
@@ -112,7 +112,6 @@ aside {
   width: 0;
   align-items: center;
   min-height: 100%;
-  max-width: 180px;
   background-color: pink;
   transition: all 0.2s linear;
 }

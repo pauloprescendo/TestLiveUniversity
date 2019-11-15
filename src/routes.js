@@ -3,21 +3,38 @@ const express = require('express');
 const routes = express.Router();
 
 routes.get('/', (req, res) => {
-  const drinks = [
-    { name: 'Bloody Mary', drunkness: 3 },
-    { name: 'Martini', drunkness: 5 },
-    { name: 'Scotch', drunkness: 10 },
-  ];
-  const tagline = "Any code of your own that you haven't looked at for six or more months might as well have been written by someone else.";
+  const items = {
+    a: [
+      'item a0',
+      'item a1',
+      'item a2',
+      'item a3',
+      'item a4',
+      'item a5',
+      'item a6',
+      'item a7',
+      'item a8',
+    ],
+    b: [
+      'item b0',
+      'item b1',
+      'item b2',
+      'item b3',
+      'item b4',
+      'item b5',
+      'item b6',
+      'item b7',
+      'item b8',
+    ],
+  };
 
   res.render('views/index', {
-    drinks,
-    tagline,
+    items,
   });
 });
 
-// routes.get('/about', (req, res) => {
-//   res.render('pages/about');
-// });
+routes.get('/home', (req, res) => {
+  res.render('views/home');
+});
 
 module.exports = routes;
