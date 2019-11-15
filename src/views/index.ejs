@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Live University</title>
+  <link rel="stylesheet" href="/stylesheets/index.css">
+  <!-- <script src="https://kit.fontawesome.com/8012623d8a.js" crossorigin="anonymous"></script> -->
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+</head>
+<body>
+  <div class="container" id="container">
+
+    <nav>
+      <div>
+        <button id="btn-options" onclick="openOptions()">Options</button>
+      </div>
+      <div>
+        <button>Quantity</button>
+        <input type="text" placeholder="Type Here"/>
+      </div>
+    </nav>
+
+    <aside id="options">
+      <select id="select-options" onchange="showItems()">
+        <option value="" selected>Select a option</option>
+        <% for ( item in items ) { %>
+          <option value="<%= item %>"><%= item %></option>
+        <% } %>
+      </select>
+    </aside>
+
+    <article id="article">
+      <ul>
+        <% for (item in items) { %>
+          <div class="li-<%= item %>">
+            <% for (let i = 0; i < items[item].length; i++) { %>
+              <li>
+                <i><%= i %></i>
+                <span><%= items[item][i] %></span>
+              </li>
+            <% } %>
+          </div>
+        <% } %>
+      </ul>
+    </article>
+
+
+  </div>
+  <script src="javascripts/index.js"></script>
+</body>
+</html>
