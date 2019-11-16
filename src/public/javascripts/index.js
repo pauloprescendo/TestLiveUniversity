@@ -13,20 +13,23 @@ $(document).mouseup((e) => {
   }
 });
 
-function showItems() {
-  let select, div;
-  select = document.getElementById('select-options').value;
-  div = document.querySelectorAll('article ul div');
+function loadItems() {
+  let option = document.getElementById('select-options').value || '0';
+  let xhttp = new XMLHttpRequest();
 
-  for (let i = 0; i < div.length; i++) {
-    if (select !== "") {
-      if ( `li-${select}` == div[i].className ) {
-        div[i].style.display = 'block';
-      } else {
-        div[i].style.display = 'none';
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      document.querySelector('article ul').innerHTML = '';
+      const list = JSON.parse(this.response).items;
+      for ( let i = 0; i < list.length; i++ ) {
+        let node = document.createElement('li');
+        let textnode = document.createTextNode(`${list[i]}`);
+        node.appendChild(textnode);
+        document.querySelector('article ul').appendChild(node);
       }
-    } else {
-      div[i].style.display = 'block';
     }
-  }
+  };
+
+  xhttp.open('GET',`option/${option}`, true);
+  xhttp.send();
 }

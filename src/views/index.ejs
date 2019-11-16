@@ -22,26 +22,16 @@
     </nav>
 
     <aside id="options">
-      <select id="select-options" onchange="showItems()">
+      <select id="select-options" onchange="loadItems()">
         <option value="" selected>Select a option</option>
-        <% for ( item in items ) { %>
-          <option value="<%= item %>"><%= item %></option>
-        <% } %>
+        <% options.forEach((opt) => { %>
+          <option value="<%= opt %>"><%= opt %></option>
+        <% }); %>
       </select>
     </aside>
 
     <article id="article">
       <ul>
-        <% for (item in items) { %>
-          <div class="li-<%= item %>">
-            <% for (let i = 0; i < items[item].length; i++) { %>
-              <li>
-                <i><%= i %></i>
-                <span><%= items[item][i] %></span>
-              </li>
-            <% } %>
-          </div>
-        <% } %>
       </ul>
     </article>
 
