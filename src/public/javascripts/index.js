@@ -27,10 +27,12 @@ function showItems(list) {
   const ul = document.querySelector('article ul');
   ul.innerHTML = '';
   list.forEach((value) => {
-    const node = document.createElement('li');
+    const li = document.createElement('li');
+    const span = document.createElement('span');
     const textnode = document.createTextNode(value);
-    node.appendChild(textnode);
-    ul.appendChild(node);
+    span.appendChild(textnode);
+    li.appendChild(span);
+    ul.appendChild(li);
   });
 }
 

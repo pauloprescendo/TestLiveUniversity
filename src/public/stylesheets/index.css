@@ -16,7 +16,6 @@ body, input, button {
 
 .container {
   display: flex;
-  background-color: aqua;
   min-height: 100%;
   margin-left: 0;
 }
@@ -25,7 +24,7 @@ nav {
   width: 18%;
   min-width: 180px;
   flex-direction: column;
-  background-color: blueviolet;
+  background-color: #031726;
   min-height: 100%;
   padding-top: 35px;
   transition: margin-left .5s;
@@ -36,7 +35,7 @@ nav div {
   display: flex;
   width: 100%;
   height: 110px;
-  background-color: darkblue;
+  background-color: #103B3B;
   flex-direction: column;
   align-items: center;
   justify-content: center;
@@ -46,7 +45,7 @@ nav div {
 nav div button {
   border: none;
   width: 100%;
-  background-color: coral;
+  background-color: #155151;
   color: white;
   padding: 20px;
   cursor: pointer;
@@ -54,7 +53,7 @@ nav div button {
 
 nav div input {
   margin-top: 5px;
-  color: azure;
+  color: white;
   width: 80%;
   background: none;
   border: none;
@@ -62,20 +61,20 @@ nav div input {
 }
 
 nav div input::placeholder {
-  color: gray;
+  color: #D2D4C8;
   text-align: center;
 }
 
 nav button:hover {
-  background-color: grey;
+  background-color: #144A4A;
 }
 
 nav button:active {
-  background-color: lightgray;
+  background-color: #2A6060;
 }
 
 .error-button {
-  background-color: #ff0000;
+  background-color: #8B2635;
 }
 
 article {
@@ -84,7 +83,7 @@ article {
   justify-content: space-between;
   padding: 35px 25px 60px 25px;
   width: 100%;
-  background-color: #1a8d0a;
+  background-color: #E0E2DB;
   min-height: 100%;
   transition: margin-left .5s;
 }
@@ -96,7 +95,6 @@ article ul {
   width: 100%;
   min-height: 100%;
   flex-direction: column;
-  background-color: tomato;
 }
 
 article ul li {
@@ -104,10 +102,10 @@ article ul li {
   margin-bottom: 30px;
   align-items: center;
   height: 110px;
-  background-color: brown;
+  background-color: #D2D4C8;
 }
 
-article ul li i {
+article ul li span {
   padding: 0 35px 0 35px;
 }
 
@@ -115,21 +113,20 @@ article div {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: chocolate;
 }
 
 article div button {
   margin: 10px;
   border: none;
-  color: black;
-  background-color: gray;
+  color: white;
+  background-color: #031726;
   cursor: pointer;
   width: 35px;
   height: 25px;
 }
 
 article div button:hover {
-  background-color: #6f6f6f;
+  background-color: #155151;
 }
 
 aside {
@@ -138,15 +135,16 @@ aside {
   width: 0;
   align-items: center;
   min-height: 100%;
-  background-color: pink;
+  background-color: #8B2635;
   transition: all 0.2s linear;
 }
 
 aside select {
   width: 85%;
+  height: 25px;
   margin-top: 75px;
-  background-color: #ff0000;
+  background-color: #E0E2DB;
+  color: black;
   border: none;
-  transition: all 0.2s linear;
   cursor: pointer;
 }
