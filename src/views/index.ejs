@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Live University</title>
   <link rel="stylesheet" href="/stylesheets/index.css">
-  <!-- <script src="https://kit.fontawesome.com/8012623d8a.js" crossorigin="anonymous"></script> -->
+  <script src="https://kit.fontawesome.com/8012623d8a.js" crossorigin="anonymous"></script>
   <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 </head>
 <body>
@@ -16,13 +16,13 @@
         <button id="btn-options" onclick="openOptions()">Options</button>
       </div>
       <div>
-        <button>Quantity</button>
-        <input type="text" placeholder="Type Here"/>
+        <button id="button-quantity" onclick="loadItems()">Quantity</button>
+        <input id="input-quantity" type="text" placeholder="Type Here"/>
       </div>
     </nav>
 
     <aside id="options">
-      <select id="select-options" onchange="loadItems()">
+      <select id="select-options">
         <option value="" selected>Select a option</option>
         <% options.forEach((opt) => { %>
           <option value="<%= opt %>"><%= opt %></option>
@@ -30,11 +30,14 @@
       </select>
     </aside>
 
-    <article id="article">
+    <article>
       <ul>
       </ul>
+      <div>
+          <button id="btn-previous" onclick="previousPage()"><i class="fas fa-angle-double-left"></i></button>
+          <button id="btn-next" onclick="nextPage()"><i class="fas fa-angle-double-right"></i></button>
+      </div>
     </article>
-
 
   </div>
   <script src="javascripts/index.js"></script>

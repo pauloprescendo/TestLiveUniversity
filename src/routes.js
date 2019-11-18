@@ -13,6 +13,7 @@ const items = {
     'item a6',
     'item a7',
     'item a8',
+    'item a9',
   ],
   b: [
     'item b0',
@@ -24,6 +25,7 @@ const items = {
     'item b6',
     'item b7',
     'item b8',
+    'item b9',
   ],
 };
 const options = Object.keys(items);

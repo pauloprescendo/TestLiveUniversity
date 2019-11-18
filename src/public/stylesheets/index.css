@@ -49,6 +49,7 @@ nav div button {
   background-color: coral;
   color: white;
   padding: 20px;
+  cursor: pointer;
 }
 
 nav div input {
@@ -71,6 +72,10 @@ nav button:hover {
 
 nav button:active {
   background-color: lightgray;
+}
+
+.button-quantity {
+  background-color: #ff0000;
 }
 
 article {
@@ -106,6 +111,27 @@ article ul li i {
   padding: 0 35px 0 35px;
 }
 
+article div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: chocolate;
+}
+
+article div button {
+  margin: 10px;
+  border: none;
+  color: black;
+  background-color: gray;
+  cursor: pointer;
+  width: 35px;
+  height: 25px;
+}
+
+article div button:hover {
+  background-color: #6f6f6f;
+}
+
 aside {
   display: flex;
   flex-direction: column;
@@ -122,4 +148,5 @@ aside select {
   background-color: #ff0000;
   border: none;
   transition: all 0.2s linear;
+  cursor: pointer;
 }
