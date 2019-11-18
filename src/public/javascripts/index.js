@@ -1,8 +1,3 @@
-/* eslint-disable no-plusplus */
-/* eslint-disable eqeqeq */
-/* eslint-disable func-names */
-/* eslint-disable no-unused-vars */
-/* eslint-disable no-undef */
 const btnPrevious = document.getElementById('btn-previous');
 const btnNext = document.getElementById('btn-next');
 let iptQuantity = document.getElementById('input-quantity').value;
@@ -62,20 +57,24 @@ function loadItems() {
   const btnQuantity = document.getElementById('button-quantity');
   const sltOption = document.getElementById('select-options').value;
   iptQuantity = document.getElementById('input-quantity').value;
+  document.querySelector('article ul').innerHTML = '';
+  itemsResponse = [];
   const xhttp = new XMLHttpRequest();
-  if (iptQuantity >= 1 && iptQuantity <= 3 && sltOption) {
-    xhttp.onreadystatechange = function () {
-      if (this.readyState == 4 && this.status == 200) {
-        btnQuantity.classList.remove('button-quantity');
-        itemsResponse = JSON.parse(this.response).items;
-        currentPage = 1;
-        pagination(itemsResponse, iptQuantity);
-      }
-    };
-    xhttp.open('GET', `option/${sltOption}`, true);
-    xhttp.send();
+  if (iptQuantity >= 1 && iptQuantity <= 3) {
+    if (sltOption !== '') {
+      xhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+          itemsResponse = JSON.parse(this.response).items;
+          currentPage = 1;
+          pagination(itemsResponse, iptQuantity);
+        }
+      };
+      xhttp.open('GET', `option/${sltOption}`, true);
+      xhttp.send();
+    }
+    btnQuantity.classList.remove('error-button');
   } else {
-    btnQuantity.classList.add('button-quantity');
+    btnQuantity.classList.add('error-button');
   }
 }
 

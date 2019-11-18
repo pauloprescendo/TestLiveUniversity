@@ -22,7 +22,7 @@
     </nav>
 
     <aside id="options">
-      <select id="select-options">
+      <select id="select-options" onchange="loadItems()">
         <option value="" selected>Select a option</option>
         <% options.forEach((opt) => { %>
           <option value="<%= opt %>"><%= opt %></option>
